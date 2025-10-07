@@ -1,0 +1,362 @@
+[
+  {
+    "id": 1,
+    "title": "Super Notes",
+    "companyName": "NoteCorp",
+    "description": "A simple and efficient note-taking app.",
+    "image": "https://i.ibb.co.com/qYfFj5DQ/demo-app-1.webp",
+    "size": 25,
+    "reviews": 1200,
+    "ratingAvg": 4.5,
+    "downloads": 50000,
+    "ratings": [
+      { "name": "1 star", "count": 50 },
+      { "name": "2 star", "count": 30 },
+      { "name": "3 star", "count": 70 },
+      { "name": "4 star", "count": 400 },
+      { "name": "5 star", "count": 650 }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "FitLife Tracker",
+    "companyName": "HealthPlus",
+    "description": "Track your workouts, meals, and progress effortlessly.",
+    "image": "https://i.ibb.co.com/bMqbTX4K/demo-app-2.webp",
+    "size": 40,
+    "reviews": 2400,
+    "ratingAvg": 4.7,
+    "downloads": 120000,
+    "ratings": [
+      { "name": "1 star", "count": 60 },
+      { "name": "2 star", "count": 40 },
+      { "name": "3 star", "count": 100 },
+      { "name": "4 star", "count": 800 },
+      { "name": "5 star", "count": 1400 }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "PhotoMaster",
+    "companyName": "SnapTech",
+    "description": "Edit and enhance your photos with powerful tools.",
+    "image": "https://i.ibb.co.com/xtthjXdN/demo-app-3.webp",
+    "size": 55,
+    "reviews": 3100,
+    "ratingAvg": 4.3,
+    "downloads": 90000,
+    "ratings": [
+      { "name": "1 star", "count": 120 },
+      { "name": "2 star", "count": 80 },
+      { "name": "3 star", "count": 300 },
+      { "name": "4 star", "count": 900 },
+      { "name": "5 star", "count": 1700 }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "MindCalm",
+    "companyName": "ZenLife",
+    "description": "Meditation and relaxation app for busy minds.",
+    "image": "https://i.ibb.co.com/qYtt42Kh/demo-app-4.webp",
+    "size": 20,
+    "reviews": 1800,
+    "ratingAvg": 4.6,
+    "downloads": 60000,
+    "ratings": [
+      { "name": "1 star", "count": 30 },
+      { "name": "2 star", "count": 25 },
+      { "name": "3 star", "count": 150 },
+      { "name": "4 star", "count": 600 },
+      { "name": "5 star", "count": 995 }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "RecipeHub",
+    "companyName": "Foodies Inc",
+    "description": "Discover and share your favorite recipes.",
+    "image": "https://i.ibb.co.com/LDdjyr0y/demo-app-5.webp",
+    "size": 35,
+    "reviews": 2700,
+    "ratingAvg": 4.4,
+    "downloads": 85000,
+    "ratings": [
+      { "name": "1 star", "count": 70 },
+      { "name": "2 star", "count": 50 },
+      { "name": "3 star", "count": 300 },
+      { "name": "4 star", "count": 900 },
+      { "name": "5 star", "count": 1380 }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "TravelMate",
+    "companyName": "GlobeTrotters",
+    "description": "Plan trips, explore destinations, and book hotels.",
+    "image": "https://i.ibb.co.com/1GVFxP5h/demo-app-6.webp",
+    "size": 60,
+    "reviews": 3200,
+    "ratingAvg": 4.2,
+    "downloads": 100000,
+    "ratings": [
+      { "name": "1 star", "count": 150 },
+      { "name": "2 star", "count": 120 },
+      { "name": "3 star", "count": 500 },
+      { "name": "4 star", "count": 1000 },
+      { "name": "5 star", "count": 1430 }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Language Buddy",
+    "companyName": "LinguaTech",
+    "description": "Learn new languages quickly and interactively.",
+    "image": "https://i.ibb.co.com/6R86VMRZ/download.jpg",
+    "size": 45,
+    "reviews": 2100,
+    "ratingAvg": 4.5,
+    "downloads": 70000,
+    "ratings": [
+      { "name": "1 star", "count": 50 },
+      { "name": "2 star", "count": 40 },
+      { "name": "3 star", "count": 200 },
+      { "name": "4 star", "count": 700 },
+      { "name": "5 star", "count": 1110 }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Daily Planner",
+    "companyName": "OrganizeMe",
+    "description": "Stay organized with tasks, reminders, and calendars.",
+    "image": "https://i.ibb.co.com/7JcFpdXC/download-3.jpg",
+    "size": 15,
+    "reviews": 1500,
+    "ratingAvg": 4.1,
+    "downloads": 50000,
+    "ratings": [
+      { "name": "1 star", "count": 40 },
+      { "name": "2 star", "count": 30 },
+      { "name": "3 star", "count": 200 },
+      { "name": "4 star", "count": 500 },
+      { "name": "5 star", "count": 730 }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Music Streamer",
+    "companyName": "TuneIn",
+    "description": "Stream and download millions of songs.",
+    "image": "https://i.ibb.co.com/x8H8WQJn/download-1.jpg",
+    "size": 70,
+    "reviews": 4000,
+    "ratingAvg": 4.8,
+    "downloads": 200000,
+    "ratings": [
+      { "name": "1 star", "count": 100 },
+      { "name": "2 star", "count": 50 },
+      { "name": "3 star", "count": 200 },
+      { "name": "4 star", "count": 800 },
+      { "name": "5 star", "count": 2850 }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "WeatherPro",
+    "companyName": "ClimateSoft",
+    "description": "Accurate weather forecasts and alerts worldwide.",
+    "image": "https://i.ibb.co.com/zTfVnbhp/download-2.jpg",
+    "size": 30,
+    "reviews": 1800,
+    "ratingAvg": 4.3,
+    "downloads": 65000,
+    "ratings": [
+      { "name": "1 star", "count": 40 },
+      { "name": "2 star", "count": 60 },
+      { "name": "3 star", "count": 250 },
+      { "name": "4 star", "count": 600 },
+      { "name": "5 star", "count": 850 }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Crypto Watch",
+    "companyName": "FinTech Labs",
+    "description": "Track cryptocurrency prices and market trends.",
+    "image": "https://i.ibb.co.com/SDBGkTqr/download-4.jpg",
+    "size": 50,
+    "reviews": 2200,
+    "ratingAvg": 4.6,
+    "downloads": 95000,
+    "ratings": [
+      { "name": "1 star", "count": 60 },
+      { "name": "2 star", "count": 50 },
+      { "name": "3 star", "count": 200 },
+      { "name": "4 star", "count": 700 },
+      { "name": "5 star", "count": 1190 }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "BookFinder",
+    "companyName": "ReadMore",
+    "description": "Find and read millions of books online.",
+    "image": "https://i.ibb.co.com/RTw71Lc4/images-1.jpg",
+    "size": 35,
+    "reviews": 1600,
+    "ratingAvg": 4.4,
+    "downloads": 80000,
+    "ratings": [
+      { "name": "1 star", "count": 50 },
+      { "name": "2 star", "count": 40 },
+      { "name": "3 star", "count": 200 },
+      { "name": "4 star", "count": 550 },
+      { "name": "5 star", "count": 760 }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Budget Tracker",
+    "companyName": "MoneyWise",
+    "description": "Manage your finances and track expenses.",
+    "image": "https://i.ibb.co.com/6714qnbx/images-2.jpg",
+    "size": 25,
+    "reviews": 1400,
+    "ratingAvg": 4.2,
+    "downloads": 60000,
+    "ratings": [
+      { "name": "1 star", "count": 50 },
+      { "name": "2 star", "count": 30 },
+      { "name": "3 star", "count": 150 },
+      { "name": "4 star", "count": 500 },
+      { "name": "5 star", "count": 670 }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Fitness Coach",
+    "companyName": "HealthPro",
+    "description": "Personalized workout plans and diet tracking.",
+    "image": "https://i.ibb.co.com/hFSGsRB0/images-3.jpg",
+    "size": 45,
+    "reviews": 2500,
+    "ratingAvg": 4.7,
+    "downloads": 110000,
+    "ratings": [
+      { "name": "1 star", "count": 60 },
+      { "name": "2 star", "count": 40 },
+      { "name": "3 star", "count": 150 },
+      { "name": "4 star", "count": 800 },
+      { "name": "5 star", "count": 1450 }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Travel Journal",
+    "companyName": "Adventure Co",
+    "description": "Record your travel experiences and memories.",
+    "image": "https://i.ibb.co.com/wv5SKnq/images-4.jpg",
+    "size": 20,
+    "reviews": 900,
+    "ratingAvg": 4.5,
+    "downloads": 40000,
+    "ratings": [
+      { "name": "1 star", "count": 20 },
+      { "name": "2 star", "count": 15 },
+      { "name": "3 star", "count": 100 },
+      { "name": "4 star", "count": 300 },
+      { "name": "5 star", "count": 465 }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "MovieStream",
+    "companyName": "CineMax",
+    "description": "Stream movies and TV shows anytime, anywhere.",
+    "image": "https://i.ibb.co.com/Xx7zc1GD/images-6.jpg",
+    "size": 80,
+    "reviews": 5000,
+    "ratingAvg": 4.6,
+    "downloads": 250000,
+    "ratings": [
+      { "name": "1 star", "count": 120 },
+      { "name": "2 star", "count": 80 },
+      { "name": "3 star", "count": 400 },
+      { "name": "4 star", "count": 1100 },
+      { "name": "5 star", "count": 3300 }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Language Flashcards",
+    "companyName": "EduSmart",
+    "description": "Learn vocabulary with interactive flashcards.",
+    "image": "https://i.ibb.co.com/C5WwW4R3/images.jpg",
+    "size": 10,
+    "reviews": 1200,
+    "ratingAvg": 4.3,
+    "downloads": 45000,
+    "ratings": [
+      { "name": "1 star", "count": 30 },
+      { "name": "2 star", "count": 20 },
+      { "name": "3 star", "count": 150 },
+      { "name": "4 star", "count": 400 },
+      { "name": "5 star", "count": 600 }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Mind Games",
+    "companyName": "Brainy Apps",
+    "description": "Puzzle games to improve focus and memory.",
+    "image": "https://i.ibb.co.com/7xXRkM6F/images.png",
+    "size": 50,
+    "reviews": 2300,
+    "ratingAvg": 4.4,
+    "downloads": 90000,
+    "ratings": [
+      { "name": "1 star", "count": 50 },
+      { "name": "2 star", "count": 50 },
+      { "name": "3 star", "count": 200 },
+      { "name": "4 star", "count": 700 },
+      { "name": "5 star", "count": 1300 }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Pet Care",
+    "companyName": "HappyPets",
+    "description": "Track pet health, appointments, and activities.",
+    "image": "https://i.ibb.co.com/1GVFxP5h/demo-app-6.webp",
+    "size": 30,
+    "reviews": 1500,
+    "ratingAvg": 4.2,
+    "downloads": 55000,
+    "ratings": [
+      { "name": "1 star", "count": 40 },
+      { "name": "2 star", "count": 30 },
+      { "name": "3 star", "count": 200 },
+      { "name": "4 star", "count": 500 },
+      { "name": "5 star", "count": 730 }
+    ]
+  },
+  {
+    "id": 20,
+    "title": "NewsDaily",
+    "companyName": "InfoMedia",
+    "description": "Stay updated with the latest news around the world.",
+    "image": "https://i.ibb.co.com/bMqbTX4K/demo-app-2.webp",
+    "size": 25,
+    "reviews": 3000,
+    "ratingAvg": 4.5,
+    "downloads": 120000,
+    "ratings": [
+      { "name": "1 star", "count": 60 },
+      { "name": "2 star", "count": 50 },
+      { "name": "3 star", "count": 300 },
+      { "name": "4 star", "count": 900 },
+      { "name": "5 star", "count": 1690 }
+    ]
+  }
+]
