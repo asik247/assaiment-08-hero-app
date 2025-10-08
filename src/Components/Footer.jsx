@@ -1,13 +1,15 @@
 import React from "react";
+// import heroImg from "../assets/hero.png";
+// import downloadImg from "../assets/icon-downloads.png";
+import logoImg from "../assets/logo.png";
 
 const Footer = () => {
   return (
   <footer className="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10">
-  <nav className="grid grid-flow-col gap-4">
-    <a className="link link-hover">About us</a>
-    <a className="link link-hover">Contact</a>
-    <a className="link link-hover">Jobs</a>
-    <a className="link link-hover">Press kit</a>
+  <nav className="grid grid-flow-col gap-2">
+    <img className="w-[35px]" src={logoImg} alt="" />
+    <a className="link link-hover">HERO.IO</a>
+    
   </nav>
   <nav>
     <div className="grid grid-flow-col gap-4">
@@ -47,7 +49,7 @@ const Footer = () => {
     </div>
   </nav>
   <aside>
-    <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+    <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
   </aside>
 </footer>
   );

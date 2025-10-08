@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useProducts from "../Hooks/useProducts";
 import downloadImg from "../assets/icon-downloads.png";
 import ratingImg from "../assets/icon-ratings.png";
+import appErrorImg from "../assets/App-Error.png";
 import { NavLink } from "react-router";
 
 const Apps = () => {
@@ -67,7 +68,14 @@ const Apps = () => {
       {/* Product List */}
       {notFound ? (
         <div className="text-center text-gray-600 font-semibold text-3xl my-10">
-          No Apps Found
+          <img className="w-[200px] block mx-auto mb-3" src={appErrorImg} alt="" />
+         <h1> OPPS!! APP NOT FOUND</h1>
+         <p className="text-gray-400 my-4 text-[16px]">The App you are requesting is not found on our system. please try another apps</p>
+          <div className="flex justify-center my-5">
+        <NavLink to="/" className="btn font-bold text-lg text-center">
+          Go Back
+        </NavLink>
+      </div>
         </div>
       ) : (
         <div className="md:grid grid-cols-4 gap-5">
@@ -104,11 +112,11 @@ const Apps = () => {
         </div>
       )}
       {/* Show All Btn */}
-      <div className="flex justify-center my-5">
-        <NavLink to="/app" className="btn font-bold text-lg text-center">
-          Show All
+      {/* <div className="flex justify-center my-5">
+        <NavLink to="/" className="btn font-bold text-lg text-center">
+          Go Back
         </NavLink>
-      </div>
+      </div> */}
     </div>
   );
 };

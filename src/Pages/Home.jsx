@@ -59,17 +59,17 @@ const Home = () => {
             </h1>
 
             <div className="md:flex justify-center items-center gap-10">
-              <div className=" px-6 py-4 text-center rounded-lg">
+              <div className=" px-6 py-4 text-center rounded-lg border transition-transform duration-300 hover:scale-105 bg-gray-600 md:mb-0 mb-5">
                 <p>Total Downloads</p>
                 <h2 className="md:text-2xl text-lg font-bold">29.6M</h2>
                 <p>21% more than last month</p>
               </div>
-              <div className=" px-6 py-4 text-center rounded-lg">
+              <div className=" px-6 py-4 text-center rounded-lg border transition-transform duration-300 hover:scale-105 bg-[#550A66] md:mb-0 mb-5">
                 <p>Total Reviews</p>
                 <h2 className="md:text-2xl text-lg font-bold">906K</h2>
                 <p>46% more than last month</p>
               </div>
-              <div className=" px-6 py-4 text-center rounded-lg">
+              <div className=" px-6 py-4 text-center rounded-lg border transition-transform duration-300 hover:scale-105 bg-[#969FB0] md:mb-0 mb-5">
                 <p>Active Apps</p>
                 <h2 className="md:text-2xl text-lg font-bold">132+</h2>
                 <p>31 more will Launch</p>

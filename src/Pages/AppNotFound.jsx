@@ -12,7 +12,8 @@ const AppNotFound = () => {
         Sorry, this app you’re looking for doesn’t exist.
       </p>
       <NavLink
-        to="/app"
+        to="/detail/1"
+        // aktu proble ase apps oo details bck koe aber detials a detai..... rat 156am....
         className="btn"
       >
         Back to Apps
