@@ -5,6 +5,7 @@ import downloadImg from "../assets/icon-downloads.png";
 import ratingImg from "../assets/icon-ratings.png";
 import reviewImg from "../assets/icon-review.png";
 import { Bar, BarChart, CartesianGrid, Legend, Tooltip, XAxis, YAxis } from "recharts";
+import { addToStroedDB } from "../Utlity/addProductDB";
 
 const Details = () => {
   const { id } = useParams();
@@ -14,9 +15,17 @@ const Details = () => {
   //   console.log(product);
   const { title, image, companyName, downloads, reviews, ratingAvg,ratings } =
     product || {};
+
+// Local stroed code...
+
+const handleLocalDB = (id)=>{
+addToStroedDB(id)
+}
+
+
   return (
     <div className="container mx-auto ">
-      <div className="md:flex justify-between items-center w-full container mx-auto  bg-base-100 shadow-sm  h-[60vh] ">
+      <div className="md:flex justify-between items-center w-full container mx-auto    md:h-[60vh] h-[70vh] ">
         <figure>
           <img src={image} alt="Movie" />
         </figure>
@@ -41,15 +50,16 @@ const Details = () => {
             </div>
           </div>
           <div className="btn w-50 ">
-            <NavLink to={"/install"}>Install Now (201 MB)</NavLink>
+            {/* <NavLink to={"/install"}>Install Now (201 MB)</NavLink> */}
+            <button onClick={()=>handleLocalDB(id)} className="">Install Now</button>
           </div>
         </div>
       </div>
-      <div className=" w-full overflow-hidden my-5">
+      <div className=" w-full overflow-hidden my-10">
         <h1 className="font-bold text-2xl">Ratings</h1>
 
     <BarChart
-      width={600}
+      width={700}
       height={400}
      data={ratings}
       layout="vertical" 
@@ -60,7 +70,7 @@ const Details = () => {
       <YAxis type="category" dataKey="name" />  
       <Tooltip />
       <Legend />
-      <Bar dataKey="count" fill="#82ca9d" barSize={25} />
+      <Bar dataKey="count" fill="#ff4f00" barSize={25} />
     </BarChart>
       </div>
       <div>
