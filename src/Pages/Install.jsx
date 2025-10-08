@@ -80,23 +80,23 @@ const Install = () => {
             />
             <div>
               <h2 className="font-semibold text-lg">{p.title}</h2>
-              <div className="flex items-center gap-4">
-                <div className="flex gap-2 items-center">
+              <div className="flex items-center gap-1">
+                <div className="flex gap-1 items-center">
                   <img className="w-[20px]" src={downloadImg} alt="" />
                   <h1>{p.downloads}</h1>
                 </div>
-                <div className="flex gap-2 items-center">
+                <div className="flex gap-1 items-center">
                   <img className="w-[20px]" src={ratingImg} alt="" />
                   <h1>{p.ratingAvg}</h1>
                 </div>
                 <div>
-                  <p>Size: {p.size} MB</p>
+                  <p className="text-gray-400">{p.size} MB</p>
                 </div>
               </div>
             </div>
           </div>
           <div>
-            <button onClick={() => handleRemove(p.id, p.title)} className="btn">
+            <button onClick={() => handleRemove(p.id, p.title)} className="btn px-2">
               Uninstall
             </button>
           </div>

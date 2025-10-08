@@ -9,8 +9,6 @@ const Apps = () => {
   const [search, setSearch] = useState("");
 
   const trims = search.trim().toLocaleLowerCase();
-
-  // ফিল্টার করা data
   const filterData = trims
     ? products.filter((product) =>
         product.title.toLocaleLowerCase().includes(trims)
@@ -73,7 +71,7 @@ const Apps = () => {
         </div>
       ) : (
         <div className="md:grid grid-cols-4 gap-5">
-          {products.map(({ id, image, title, downloads, ratingAvg }) => (
+          {filterData.map(({ id, image, title, downloads, ratingAvg }) => (
             <NavLink key={id} to={`/detail/${id}`}>
               <div className="card bg-base-100 w-full shadow-sm transition-transform duration-300 hover:scale-105 hover:shadow-lg">
                 <figure>
