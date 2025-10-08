@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
                 element:<Install></Install>
             },
             {
-                path:'/detail',
+                path:'/detail/:id',
                 element:<Details></Details>
             },
             {

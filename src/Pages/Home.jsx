@@ -80,8 +80,6 @@ const Home = () => {
       </div>
       {/* Trending Apps */}
 
-      {/* <NavLink to={'/detail'}></NavLink> */}
-
       <div className="container mx-auto">
         <div className="text-center">
           <h1 className="font-bold text-3xl my-3">Trending Apps</h1>
@@ -90,37 +88,38 @@ const Home = () => {
           </p>
         </div>
         <div className="md:grid grid-cols-4 gap-5">
-          {sliceProducts.map((product) => (
-            <div key={product.id} className="card bg-base-100 w-full shadow-sm">
-              <figure>
-                <img
-                  className="h-[200px] object-cover p-3 rounded-3xl"
-                  src={product.image}
-                  alt="Shoes"
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className=" font-bold text-lg text-center">
-                  {product.title}
-                </h2>
-                <div className="flex justify-between gap-2 overflow-hidden">
-                  <div className="flex items-center gap-1 text-blue-400 btn px-2">
-                    <img className="w-4" src={downloadImg} alt="download img" />
-                    <span>{product.downloads}</span>
-                  </div>
-                  <div className="flex items-center text-violet-500 gap-1 btn px-3">
-                    <img
-                      className="w-4 text-blue-300"
-                      src={ratingImg}
-                      alt="download img"
-                    />
-                    <span>{product.ratingAvg}</span>
+          {sliceProducts.map(({ id, image, title, downloads, ratingAvg }) => (
+            <NavLink key={id} to={`/detail/${id}`}>
+              <div className="card bg-base-100 w-full shadow-sm">
+                <figure>
+                  <img
+                    className="h-[200px] object-cover p-3 rounded-3xl"
+                    src={image}
+                    alt={title}
+                  />
+                </figure>
+                <div className="card-body">
+                  <h2 className="font-bold text-lg text-center">{title}</h2>
+                  <div className="flex justify-between gap-2 overflow-hidden">
+                    <div className="flex items-center gap-1 text-blue-400 btn px-2">
+                      <img
+                        className="w-4"
+                        src={downloadImg}
+                        alt="download img"
+                      />
+                      <span>{downloads}</span>
+                    </div>
+                    <div className="flex items-center text-violet-500 gap-1 btn px-3">
+                      <img className="w-4" src={ratingImg} alt="rating img" />
+                      <span>{ratingAvg}</span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </NavLink>
           ))}
         </div>
+
         <div className="flex justify-center my-5">
           <NavLink to="/app" className="btn font-bold text-lg text-center">
             Show All
