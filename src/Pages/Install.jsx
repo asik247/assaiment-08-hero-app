@@ -88,7 +88,7 @@ const Install = () => {
           key={p.id}
           className="flex justify-between items-center w-full container mx-auto p-4 rounded-lg shadow-md bg-white transition-transform duration-300 hover:scale-105 hover:shadow-lg"
         >
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-1 md:gap-6">
             <img
               src={p.image}
               alt={p.title}
@@ -98,15 +98,15 @@ const Install = () => {
               <h2 className="font-semibold text-lg">{p.title}</h2>
               <div className="flex items-center gap-1">
                 <div className="flex gap-1 items-center">
-                  <img className="w-[20px]" src={downloadImg} alt="" />
-                  <h1>{p.downloads}</h1>
+                  <img className="w-[17px]" src={downloadImg} alt="" />
+                  <p>{p.downloads}</p>
                 </div>
                 <div className="flex gap-1 items-center">
-                  <img className="w-[20px]" src={ratingImg} alt="" />
-                  <h1>{p.ratingAvg}</h1>
+                  <img className="w-[17px]" src={ratingImg} alt="" />
+                  <p>{p.ratingAvg}</p>
                 </div>
                 <div>
-                  <p className="text-gray-400">{p.size} MB</p>
+                  <p className="text-gray-400">{p.size}mb</p>
                 </div>
               </div>
             </div>

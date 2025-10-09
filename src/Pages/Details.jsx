@@ -41,38 +41,31 @@ const Details = () => {
     <div className="container mx-auto">
       <Toaster />
 
-      <div className="md:flex justify-between items-center w-full md:h-[60vh] h-[70vh]">
+      <div className="md:flex justify-between items-center w-full  md:h-[60vh] h-[70vh] ml-5 md:ml-0">
         <figure>
-          <img src={image} alt={title} />
+          <img className="w-[150px] rounded-2xl mt-4 md:w-[250px]" src={image} alt={title} />
         </figure>
         <div className="card-body">
           <h2 className="card-title">{title}</h2>
           <p className="border-b-2 border-gray-300 mb-5">{companyName}</p>
-          <div className="flex justify-between items-center">
+          <div className="flex gap-10 items-center">
             <div>
-              <img src={downloadImg} alt="" />
-              <p>Download</p>
+              <img className="w-[25px]" src={downloadImg} alt="" />
+              <p className="text-[13px]">Download</p>
               <h1>{downloads}</h1>
             </div>
             <div>
-              <img src={ratingImg} alt="" />
-              <p>Average Ratings</p>
+              <img className="w-[25px]" src={ratingImg} alt="" />
+              <p className="text-[13px]">Average Ratings</p>
               <h1>{ratingAvg}</h1>
             </div>
             <div>
-              <img src={reviewImg} alt="" />
-              <p>Total Review</p>
+              <img className="w-[25px]" src={reviewImg} alt="" />
+              <p className="text-[13px]">Total Review</p>
               <h1>{reviews}</h1>
             </div>
           </div>
           <div className=" w-50 mt-4">
-            {/* <button
-              onClick={handleInstall}
-              className={`btn ${installed ? "bg-gray-400 cursor-not-allowed" : ""}`}
-              disabled={installed} 
-            >
-              {installed ? "Installed" : "Install Now"}
-            </button> */}
             <button
               onClick={handleInstall}
               disabled={installed}
