@@ -10,6 +10,7 @@ const Apps = () => {
   const { products } = useProducts();
   const [search, setSearch] = useState("");
   const [filterData, setFilterData] = useState(products);
+  // loading code ?
   const [loading, setLoading] = useState(false);
 
   //  useEffect for search..
@@ -33,17 +34,17 @@ const Apps = () => {
   return (
     <div className="container mx-auto">
       <div className="text-center md:my-10 my-4">
-        <h1 className="font-bold text-3xl my-3 text-violet-800">
+        <h1 className="font-bold md:text-3xl my-3 text-violet-800">
           Our All Applications
         </h1>
-        <p className="mb-2 text-gray-400">
+        <p className="mb-2 md:text-[18px] text-[12px] text-gray-400">
           Explore All Apps on the Market developed by us. We code for Millions
         </p>
       </div>
 
       <div className="text-center md:flex justify-between items-center my-4">
         <div>
-          <h1 className="md:my-0 my-4">({filterData.length}) Apps Found</h1>
+          <h1 className="md:my-0 my-4">({filterData.length}) <span className="text-gray-600"> Apps Found</span></h1>
         </div>
 
         <div>
@@ -106,10 +107,10 @@ const Apps = () => {
         <div className="md:grid grid-cols-4 gap-5">
           {filterData.map(({ id, image, title, downloads, ratingAvg }) => (
             <NavLink key={id} to={`/detail/${id}`}>
-              <div className="card bg-base-100 w-full shadow-sm transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+              <div className="card bg-base-100 w-full shadow-sm transition-transform duration-300 hover:scale-105 hover:shadow-lg md:my-0 my-5">
                 <figure>
                   <img
-                    className="h-[200px] object-cover p-3 rounded-3xl"
+                    className="h-[200px] object-cover p-3 rounded-lg bg-gray-200"
                     src={image}
                     alt={title}
                   />

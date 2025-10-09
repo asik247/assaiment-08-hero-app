@@ -3,20 +3,27 @@ import useProducts from "../Hooks/useProducts";
 import { getStroedProducts, removeFromStoredDB } from "../Utlity/addProductDB";
 import downloadImg from "../assets/icon-downloads.png";
 import ratingImg from "../assets/icon-ratings.png";
+import logoImg from "../assets/logo.png"; 
 import toast, { Toaster } from "react-hot-toast";
 
 const Install = () => {
   const { products } = useProducts();
   const [install, setInstall] = useState([]);
   const [sort, setSort] = useState("none");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const storedIds = getStroedProducts();
-    if (products.length > 0 && storedIds.length > 0) {
-      const myInstalledProducts = products.filter((item) =>
-        storedIds.includes(String(item.id))
-      );
-      setInstall(myInstalledProducts);
+    if (products.length > 0) {
+      if (storedIds.length > 0) {
+        const myInstalledProducts = products.filter((item) =>
+          storedIds.includes(String(item.id))
+        );
+        setInstall(myInstalledProducts);
+      } else {
+        setInstall([]);
+      }
+      setLoading(false); 
     }
   }, [products]);
 
@@ -32,18 +39,13 @@ const Install = () => {
 
   const parseDownloads = (val) => {
     if (typeof val === "number") return val;
-    if (val.toUpperCase().includes("M")) {
-      return parseFloat(val) * 1000000;
-    }
-    if (val.toUpperCase().includes("K")) {
-      return parseFloat(val) * 1000;
-    }
+    if (val.toUpperCase().includes("M")) return parseFloat(val) * 1000000;
+    if (val.toUpperCase().includes("K")) return parseFloat(val) * 1000;
     return parseFloat(val) || 0;
   };
 
   const getSortedItems = () => {
     let sorted = [...install];
-
     if (sort === "price-asc") {
       sorted.sort(
         (a, b) => parseDownloads(a.downloads) - parseDownloads(b.downloads)
@@ -58,6 +60,17 @@ const Install = () => {
 
   const sortedList = getSortedItems();
 
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen w-full">
+        <div className="flex justify-center items-center gap-2">
+          <img className="w-[40px] animate-spin" src={logoImg} alt="loading" />
+          <h1 className="text-3xl text-gray-400 animate-pulse">Loading...</h1>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="w-full space-y-4 py-10">
       <Toaster />
@@ -71,7 +84,10 @@ const Install = () => {
 
       <div className="flex justify-between items-center my-10 container mx-auto py-5">
         <div>
-          <h1 className="md:my-0 my-4">({install.length}) Apps Found</h1>
+          <h1 className="md:my-0 my-4">
+            ({install.length}){" "}
+            <span className="text-gray-400">Apps Found</span>
+          </h1>
         </div>
 
         <div>
@@ -92,7 +108,7 @@ const Install = () => {
             <img
               src={p.image}
               alt={p.title}
-              className="w-20 h-20 object-cover rounded-md"
+              className="w-20 h-20 object-cover rounded-md bg-gray-200"
             />
             <div>
               <h2 className="font-semibold text-lg">{p.title}</h2>
@@ -114,7 +130,7 @@ const Install = () => {
           <div>
             <button
               onClick={() => handleRemove(p.id, p.title)}
-              className="btn px-2"
+              className="btn bg-[#00d390] px-2"
             >
               Uninstall
             </button>

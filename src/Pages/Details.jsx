@@ -5,7 +5,6 @@ import downloadImg from "../assets/icon-downloads.png";
 import ratingImg from "../assets/icon-ratings.png";
 import reviewImg from "../assets/icon-review.png";
 import {
-  Bar,
   BarChart,
   CartesianGrid,
   Legend,
@@ -16,12 +15,41 @@ import {
 } from "recharts";
 import { addToStroedDB, getStroedProducts } from "../Utlity/addProductDB";
 import toast, { Toaster } from "react-hot-toast";
+import logoImg from "../assets/logo.png"; // spinner
 
 const Details = () => {
   const { id } = useParams();
   const { products } = useProducts();
 
+  // ✅ Hook always at top
+  const [installed, setInstalled] = useState(() => {
+    const stored = getStroedProducts();
+    return stored.includes(id);
+  });
+
+  // ✅ Spinner while products not loaded
+  if (products.length === 0) {
+    return (
+      <div className="flex justify-center items-center h-screen w-full">
+        <div className="flex justify-center items-center gap-2">
+          <img className="w-[40px] animate-spin" src={logoImg} alt="loading" />
+          <h1 className="text-3xl text-gray-400 animate-pulse">Loading...</h1>
+        </div>
+      </div>
+    );
+  }
+
   const product = products.find((p) => String(p.id) === id);
+
+  // ✅ Product not found handling
+  if (!product) {
+    return (
+      <div className="text-center my-20 text-gray-500">
+        <h1 className="text-3xl font-bold">Product Not Found!</h1>
+        <p className="mt-2">The requested product does not exist.</p>
+      </div>
+    );
+  }
 
   const {
     title,
@@ -32,11 +60,7 @@ const Details = () => {
     ratingAvg,
     ratings,
     description,
-  } = product || {};
-  const [installed, setInstalled] = useState(() => {
-    const stored = getStroedProducts();
-    return stored.includes(id);
-  });
+  } = product;
 
   const handleInstall = () => {
     addToStroedDB(id);
@@ -54,7 +78,7 @@ const Details = () => {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full h-auto md:h-[60vh] p-4 md:p-0">
         <figure>
           <img
-            className="w-[150px] rounded-2xl mt-4 md:w-[250px]"
+            className="w-[150px] rounded-2xl mt-4 md:w-[250px] bg-gray-200"
             src={image}
             alt={title}
           />
@@ -109,7 +133,7 @@ const Details = () => {
           <YAxis type="category" dataKey="name" />
           <Tooltip />
           <Legend />
-          <ReBar dataKey="count" fill="#ff4f00" barSize={25} />
+          <ReBar dataKey="count" fill="#ff8811" barSize={25} />
         </BarChart>
       </div>
 
