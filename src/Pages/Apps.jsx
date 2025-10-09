@@ -1,23 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useProducts from "../Hooks/useProducts";
 import downloadImg from "../assets/icon-downloads.png";
 import ratingImg from "../assets/icon-ratings.png";
 import appErrorImg from "../assets/App-Error.png";
+import logoImg from "../assets/logo.png";
 import { NavLink } from "react-router";
 
 const Apps = () => {
   const { products } = useProducts();
   const [search, setSearch] = useState("");
+  const [filterData, setFilterData] = useState(products);
+  const [loading, setLoading] = useState(false);
 
-  const trims = search.trim().toLocaleLowerCase();
-  const filterData = trims
-    ? products.filter((product) =>
-        product.title.toLocaleLowerCase().includes(trims)
-      )
-    : products;
+  //  useEffect for search..
+  useEffect(() => {
+    const trims = search.trim().toLocaleLowerCase();
+    setLoading(true);
 
-  const notFound = trims && filterData.length === 0;
+    const timeout = setTimeout(() => {
+      const filtered = trims
+        ? products.filter((product) =>
+            product.title.toLocaleLowerCase().includes(trims)
+          )
+        : products;
 
+      setFilterData(filtered);
+      setLoading(false);
+    }, 500);
+    return () => clearTimeout(timeout);
+  }, [search, products]);
+  const notFound = !loading && search.trim() && filterData.length === 0;
   return (
     <div className="container mx-auto">
       <div className="text-center md:my-10 my-4">
@@ -29,13 +41,11 @@ const Apps = () => {
         </p>
       </div>
 
-      {/* found data */}
       <div className="text-center md:flex justify-between items-center my-4">
         <div>
           <h1 className="md:my-0 my-4">({filterData.length}) Apps Found</h1>
         </div>
 
-        {/* Input field */}
         <div>
           <label className="input">
             <svg
@@ -58,24 +68,39 @@ const Apps = () => {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               type="search"
-              required
               placeholder="Search"
             />
           </label>
         </div>
       </div>
-      {/* <NavLink to={'/detail'}></NavLink> */}
-      {/* Product List */}
-      {notFound ? (
+      {loading ? (
+        <div className="flex justify-center my-10">
+          <div className="flex justify-center items-center gap-2">
+            <img
+              className="w-[30px] animate-spin"
+              src={logoImg}
+              alt="loading icon"
+            />
+            <h1 className="text-3xl text-gray-400 animate-pulse">Loading..</h1>
+          </div>
+        </div>
+      ) : notFound ? (
         <div className="text-center text-gray-600 font-semibold text-3xl my-10">
-          <img className="w-[200px] block mx-auto mb-3" src={appErrorImg} alt="" />
-         <h1> OPPS!! APP NOT FOUND</h1>
-         <p className="text-gray-400 my-4 text-[16px]">The App you are requesting is not found on our system. please try another apps</p>
+          <img
+            className="w-[200px] block mx-auto mb-3"
+            src={appErrorImg}
+            alt=""
+          />
+          <h1>OPPS!! APP NOT FOUND</h1>
+          <p className="text-gray-400 my-4 text-[16px]">
+            The App you are requesting is not found on our system. Please try
+            another app.
+          </p>
           <div className="flex justify-center my-5">
-        <NavLink to="/" className="btn font-bold text-lg text-center">
-          Go Back
-        </NavLink>
-      </div>
+            <NavLink to="/" className="btn font-bold text-lg text-center">
+              Back To Home
+            </NavLink>
+          </div>
         </div>
       ) : (
         <div className="md:grid grid-cols-4 gap-5">
@@ -111,12 +136,6 @@ const Apps = () => {
           ))}
         </div>
       )}
-      {/* Show All Btn */}
-      {/* <div className="flex justify-center my-5">
-        <NavLink to="/" className="btn font-bold text-lg text-center">
-          Go Back
-        </NavLink>
-      </div> */}
     </div>
   );
 };

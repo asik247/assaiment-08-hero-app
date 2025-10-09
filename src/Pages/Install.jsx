@@ -30,12 +30,28 @@ const Install = () => {
     });
   };
 
+  const parseDownloads = (val) => {
+    if (typeof val === "number") return val;
+    if (val.toUpperCase().includes("M")) {
+      return parseFloat(val) * 1000000;
+    }
+    if (val.toUpperCase().includes("K")) {
+      return parseFloat(val) * 1000;
+    }
+    return parseFloat(val) || 0;
+  };
+
   const getSortedItems = () => {
     let sorted = [...install];
+
     if (sort === "price-asc") {
-      sorted.sort((a, b) => a.size - b.size);
+      sorted.sort(
+        (a, b) => parseDownloads(a.downloads) - parseDownloads(b.downloads)
+      );
     } else if (sort === "price-dsc") {
-      sorted.sort((a, b) => b.size - a.size);
+      sorted.sort(
+        (a, b) => parseDownloads(b.downloads) - parseDownloads(a.downloads)
+      );
     }
     return sorted;
   };
@@ -96,7 +112,10 @@ const Install = () => {
             </div>
           </div>
           <div>
-            <button onClick={() => handleRemove(p.id, p.title)} className="btn px-2">
+            <button
+              onClick={() => handleRemove(p.id, p.title)}
+              className="btn px-2"
+            >
               Uninstall
             </button>
           </div>
