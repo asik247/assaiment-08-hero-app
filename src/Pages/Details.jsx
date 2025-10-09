@@ -20,9 +20,19 @@ import toast, { Toaster } from "react-hot-toast";
 const Details = () => {
   const { id } = useParams();
   const { products } = useProducts();
+
   const product = products.find((p) => String(p.id) === id);
-  const { title, image, companyName, downloads, reviews, ratingAvg, ratings,description } =
-    product || {};
+
+  const {
+    title,
+    image,
+    companyName,
+    downloads,
+    reviews,
+    ratingAvg,
+    ratings,
+    description,
+  } = product || {};
   const [installed, setInstalled] = useState(() => {
     const stored = getStroedProducts();
     return stored.includes(id);
@@ -41,9 +51,13 @@ const Details = () => {
     <div className="container mx-auto">
       <Toaster />
 
-      <div className="md:flex justify-between items-center w-full  md:h-[60vh] h-[70vh] ml-5 md:ml-0">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full h-auto md:h-[60vh] p-4 md:p-0">
         <figure>
-          <img className="w-[150px] rounded-2xl mt-4 md:w-[250px]" src={image} alt={title} />
+          <img
+            className="w-[150px] rounded-2xl mt-4 md:w-[250px]"
+            src={image}
+            alt={title}
+          />
         </figure>
         <div className="card-body">
           <h2 className="card-title">{title}</h2>
@@ -101,10 +115,7 @@ const Details = () => {
 
       <div>
         <h1 className="font-bold text-2xl my-4">Description:-</h1>
-        <p className="text-gray-400 mb-2">
-          {description}
-           
-        </p>
+        <p className="text-gray-400 mb-2">{description}</p>
       </div>
     </div>
   );

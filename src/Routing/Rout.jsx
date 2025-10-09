@@ -36,15 +36,11 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/detail/:id',
-                children:[
-                    {
-                        index:true,
-                        element:<Details></Details>
-                    },{
-                        path:'*',
-                        element:<AppNotFound></AppNotFound>
-                    }
-                ]
+               element:<Details></Details>
+            },
+            {
+                path:'/detail/*',
+                element:<AppNotFound></AppNotFound>
             },
             {
                 path:'*',
