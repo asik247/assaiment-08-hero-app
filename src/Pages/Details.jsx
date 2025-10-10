@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import useProducts from "../Hooks/useProducts";
-import { useParams } from "react-router";
+import { NavLink, useParams } from "react-router";
 import downloadImg from "../assets/icon-downloads.png";
 import ratingImg from "../assets/icon-ratings.png";
 import reviewImg from "../assets/icon-review.png";
+import appErrorImg from "../assets/App-Error.png";
 import {
   BarChart,
   CartesianGrid,
@@ -15,19 +16,17 @@ import {
 } from "recharts";
 import { addToStroedDB, getStroedProducts } from "../Utlity/addProductDB";
 import toast, { Toaster } from "react-hot-toast";
-import logoImg from "../assets/logo.png"; // spinner
+import logoImg from "../assets/logo.png"; 
 
 const Details = () => {
   const { id } = useParams();
   const { products } = useProducts();
-
-  // ✅ Hook always at top
   const [installed, setInstalled] = useState(() => {
     const stored = getStroedProducts();
     return stored.includes(id);
   });
 
-  // ✅ Spinner while products not loaded
+  // Loading Spinner..... 
   if (products.length === 0) {
     return (
       <div className="flex justify-center items-center h-screen w-full">
@@ -38,16 +37,24 @@ const Details = () => {
       </div>
     );
   }
-
   const product = products.find((p) => String(p.id) === id);
-
-  // ✅ Product not found handling
   if (!product) {
     return (
-      <div className="text-center my-20 text-gray-500">
-        <h1 className="text-3xl font-bold">Product Not Found!</h1>
-        <p className="mt-2">The requested product does not exist.</p>
-      </div>
+      <div className="flex justify-center items-center text-gray-500 w-full min-h-screen px-4">
+  <div className="text-center">
+    <img className="w-48 md:w-60 mx-auto" src={appErrorImg} alt="Error" />
+    <p className="my-4 text-sm md:text-base">
+      The requested product id does not exist.
+    </p>
+    <NavLink
+      to="/"
+      className="btn"
+    >
+      Back to Home
+    </NavLink>
+  </div>
+</div>
+
     );
   }
 
@@ -85,7 +92,7 @@ const Details = () => {
         </figure>
         <div className="card-body">
           <h2 className="card-title">{title}</h2>
-          <p className="border-b-2 border-gray-300 mb-5">{companyName}</p>
+          <p className=" text-violet-500 border-b-2 border-gray-300 mb-5">{companyName}</p>
           <div className="flex gap-10 items-center">
             <div>
               <img className="w-[25px]" src={downloadImg} alt="" />

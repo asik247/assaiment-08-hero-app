@@ -92,7 +92,7 @@ const Install = () => {
 
         <div>
           <select value={sort} onChange={(e) => setSort(e.target.value)}>
-            <option value="none">Sort by size</option>
+            <option value="none">Sort by download</option>
             <option value="price-asc">Low to high</option>
             <option value="price-dsc">High to low</option>
           </select>

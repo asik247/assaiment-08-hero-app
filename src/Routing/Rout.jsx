@@ -39,10 +39,6 @@ export const router = createBrowserRouter([
                element:<Details></Details>
             },
             {
-                path:'/detail/*',
-                element:<AppNotFound></AppNotFound>
-            },
-            {
                 path:'*',
                 element:<PageNotFound></PageNotFound>
             }

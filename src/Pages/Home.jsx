@@ -74,23 +74,23 @@ const Home = () => {
         <div className="mt-8 flex justify-center">
           <img src={heroImg} alt="Hero Illustration" className="w-[450px]" />
         </div>
-        <div className="w-screen bg-gradient-to-r from-[#632ee3] to-[#9f62f2] text-white py-">
+        <div className="w-screen bg-gradient-to-r from-[#632ee3] to-[#9f62f2] text-white py-2 md:py-5">
           <div className="container mx-auto md:flex flex-col justify-center items-center">
             <h1 className="text-center md:text-4xl text-2xl mb-5">
               Trusted by Millions, Built for You
             </h1>
             <div className="md:flex justify-center items-center gap-10">
-              <div className="px-6 py-4 text-center md:mb-0 mb-5">
+              <div className="px-6 md:py-4 text-center md:mb-0 mb-5">
                 <h1 className="text-gray-300">Total Downloads</h1>
                 <h2 className="text-4xl my-2 font-extrabold">29.6M</h2>
                 <p className="text-gray-300">21% more than last month</p>
               </div>
-              <div className="px-6 py-4 text-center md:mb-0 mb-5">
+              <div className="px-6 md:py-4 text-center md:mb-0 mb-5">
                 <p className="text-gray-300">Total Reviews</p>
                 <h2 className="text-4xl my-2 font-extrabold">906K</h2>
                 <p className="text-gray-300">46% more than last month</p>
               </div>
-              <div className="px-6 py-4 text-center md:mb-0 mb-5">
+              <div className="px-6 md:py-4 text-center md:mb-0 mb-5">
                 <p className="text-gray-300">Active Apps</p>
                 <h2 className="text-4xl my-2 font-extrabold">132+</h2>
                 <p className="text-gray-300">31 more will Launch</p>

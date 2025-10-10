@@ -20,12 +20,10 @@ const addToStroedDB = (id)=>{
         localStorage.setItem('products',data)
     }
 }
-
-
-// New Remove Function..
+// Remove localDB..
 const removeFromStoredDB = (id) => {
   const stroedDataParse = getStroedProducts();
-  const updated = stroedDataParse.filter(itemId => String(itemId) !== String(id)); // type match fix
+  const updated = stroedDataParse.filter(itemId => String(itemId) !== String(id)); 
   localStorage.setItem('products', JSON.stringify(updated));
 };
 
